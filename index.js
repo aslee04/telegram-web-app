@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api')
 
 const token = '7672281669:AAEHagMPph6S3iLN1gO2YIWXCKsJcBrmcZk'
 
-const webAppUrl = 'https://aslee04.github.io/futuretech/'
+const webAppUrl = 'https://resplendent-mermaid-5ff13b.netlify.app/'
 const bot = new TelegramBot(token, { polling: true })
 
 bot.on('message', async (msg) => {
