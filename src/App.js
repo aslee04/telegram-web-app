@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import './App.css'
 import { useTelegram } from './hooks/useTelegram'
+import Header from './components/Header/Header'
+import Button from './components/Button/Button'
 
 const tg = window.Telegram.WebApp
 
@@ -13,9 +15,9 @@ function App() {
   
   return (
     <div className='App'>
-      <h1>Work</h1>
+      <Header />
 
-      <button onClick={onToggleButton}>Toggle</button>
+      <Button onClick={onToggleButton}>Toggle</Button>
     </div>
   )
 }
