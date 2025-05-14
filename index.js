@@ -1,12 +1,29 @@
-const token = '7988590627:AAFaRY9CjxxhMshFuA6gnpV4bds1EQF8xJQ'
-
 const TelegramBot = require('node-telegram-bot-api')
 
-const bot = new TelegramBot(token, {polling: true})
+const token = '7672281669:AAEHagMPph6S3iLN1gO2YIWXCKsJcBrmcZk'
 
-bot.on('message', (msg) => {
+const webAppUrl = 'https://aslee04.github.io/futuretech/'
+const bot = new TelegramBot(token, { polling: true })
+
+bot.on('message', async (msg) => {
   const chatId = msg.chat.id
-  const text = msg.chat.id
+  const text = msg.text
 
-  if(text === '.')
+  if (text === '/start') {
+    await bot.sendMessage(chatId, 'Pastdagi tugmani bosib formani toldiring', {
+      reply_markup: {
+        keyboard: [
+          [{ text: 'Formani toldiring', web_app: { url: webAppUrl }}]
+        ]
+      }
+    })
+
+    await bot.sendMessage(chatId, 'Saytimizga tashrif buyuring', {
+        reply_markup: {
+          inline_keyboard: [
+            [{ text: 'Buyurtma berish', web_app: { url: webAppUrl } }]
+          ]
+        }
+      })
+  }
 })
