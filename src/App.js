@@ -4,8 +4,6 @@ import { useTelegram } from './hooks/useTelegram'
 import Header from './components/Header/Header'
 import Button from './components/Button/Button'
 
-const tg = window.Telegram.WebApp
-
 function App() {
   const {onToggleButton, tg} = useTelegram()
 
@@ -17,7 +15,7 @@ function App() {
     <div className='App'>
       <Header />
 
-      <button onClick={onToggleButton}>Toggle</button>
+      <Button onClick={onToggleButton}>Toggle</Button>
     </div>
   )
 }
